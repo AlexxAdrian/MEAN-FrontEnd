@@ -1,0 +1,44 @@
+<div style="position: absolute;top: 5%;left:17%;right: 0px;">
+    <img src="assets/jugador.png" alt=" ">
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3" style="margin-left: 45%;">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo"> {{ titulo | uppercase }}</span>
+                    <form class="mt-3" [formGroup]="jugadorForm" (ngSubmit)="agregarJugador()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="jugador" class="form-control form-control-lg" placeholder="Jugador">
+                            <div class="text-danger" *ngIf="jugadorForm.get('jugador')?.hasError('required') && jugadorForm.get('jugador')?.touched">
+                                <span>El nombre del jugador <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="posicion" class="form-control form-control-lg" placeholder="Casificación">
+                            <div class="text-danger" *ngIf="jugadorForm.get('posicion')?.hasError('required') && jugadorForm.get('posicion')?.touched">
+                                <span>La clasificación<strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="equipo" class="form-control form-control-lg" placeholder="Tiempo de Juego">
+                            <div class="text-danger" *ngIf="jugadorForm.get('equipo')?.hasError('required') && jugadorForm.get('equipo')?.touched">
+                                <span>El tiempo de juego <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="goles" class="form-control form-control-lg" placeholder="Goles">
+                            <div class="text-danger" *ngIf="jugadorForm.get('goles')?.hasError('required') && jugadorForm.get('goles')?.touched">
+                                <span>Los goles <strong>son obligatorios</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink="/" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+                            <button type="submit" [disabled]="jugadorForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

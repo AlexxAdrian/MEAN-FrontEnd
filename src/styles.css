@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+}
+
+body {
+    background-image: url("assets/fondo1.jpg");
+    background-size: 120%;
+    animation: fanimado 45s infinite;
+    
+}
+
+
+
+.card formulario-estilo {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    
+}
+
+@keyframes animat {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fanimado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.titulo {
+    font-size: 1.8rem;
+    font-family: 'champions';
+}
+
+@font-face {
+    font-family: 'champions';
+    src: url('./assets/itc-novarese-std-bold.ttf');
+  }
+
+th {
+    font-family: 'champions';
+}
+td {
+    font-family: 'champions';
+}
